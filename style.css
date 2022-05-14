@@ -27,20 +27,14 @@ h1 {
 }
 
 #container {
+    display: grid;
     box-shadow: 10px 10px 58px 0px rgba(0,0,0,0.75);
     white-space: nowrap;
     width: 600px;
     height: 600px;
 }
 
-#container div {
-    display: inline-block;
-    vertical-align: top;
-}
-
 .grid {
-    width: fit-content;
-    height: fit-content;
     background-color: white;
     
 }

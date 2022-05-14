@@ -9,6 +9,7 @@ const eraserBtn = document.getElementsByClassName('eraser')[0];
 const resetBtn = document.getElementById('reset');
 const gridSlider = document.getElementById('gridsize');
 const sizeLabel = document.getElementById('sizelabel');
+let gridContainer = document.getElementById('container');
 
 drawBtn.onclick = () => changeMode('draw');
 eraserBtn.onclick = () => changeMode('erase');
@@ -23,18 +24,16 @@ document.body.onmouseup = () => (mouseDown = false)
 
 // Create 16x16 grid of square divs
 function createGrid() {
-    for (let i = 0; i < gridSize; i++) {
-        for (let j = 0; j < gridSize; j++) {
+    for (let i = 0; i < gridSize * gridSize; i++) {
             grid = document.createElement('div');
             grid.classList.add('grid');
-            grid.style.cssText = `width: ${600/gridSize}px; height: ${600/gridSize}px`;
             grid.addEventListener("mouseover", changeColor);
             grid.addEventListener("mousedown", changeColor);
             document.getElementById("container").appendChild(grid);
-        }
-        let nextLine = document.createElement("br");
-        document.getElementById("container").appendChild(nextLine);
     }
+    // gridContainer.style.cssText = `gridTemplateColumns: repeat(${gridSize}, 1fr); gridTemplateRows: repeat(${gridSize}, 1fr)`;
+    gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`
+    gridContainer.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`
 }
 
 // change drawing mode between draw and erase
@@ -57,7 +56,7 @@ function changeColor(e) {
 function changeSize() {
     gridSize = gridSlider.value;
     sizeLabel.innerHTML= `${gridSize} x ${gridSize}`;
-    document.getElementById('container').innerHTML = '';
+    gridContainer.innerHTML = '';
     createGrid();
 }
 
