@@ -28,7 +28,7 @@ h1 {
 
 #container {
     display: grid;
-    box-shadow: 10px 10px 58px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 58px 0px rgba(0, 0, 0, 0.75);
     white-space: nowrap;
     width: 600px;
     height: 600px;
@@ -36,7 +36,7 @@ h1 {
 
 .grid {
     background-color: white;
-    
+
 }
 
 input[type='color'] {
@@ -58,7 +58,7 @@ input[type='color']::-moz-color-swatch {
 input[type='color']::-webkit-color-swatch {
     border: none;
     border-radius: 100%;
-    box-shadow: 10px 10px 58px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 58px 0px rgba(0, 0, 0, 0.75);
 }
 
 button {
@@ -80,7 +80,7 @@ button {
 button:hover {
     background-color: rgb(77, 124, 165);
     color: rgb(221, 221, 221);
-    box-shadow: 10px 10px 58px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 58px 0px rgba(0, 0, 0, 0.75);
 }
 
 button:active {
@@ -102,6 +102,18 @@ footer {
     display: flex;
     justify-content: center;
     width: 100%;
+    padding: 10px;
 }
 
-.footnote {}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.fa-github {
+    transition: transform 0.5s;
+  }
+  
+  .fa-github:hover {
+    transform: rotate(720deg) scale(1.5);
+  }
