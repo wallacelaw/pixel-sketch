@@ -1,6 +1,7 @@
 // Author: Wallace Law
 
 let drawingMode = 'draw';
+let gridSize = 16;
 
 //initialise buttons
 const drawBtn = document.getElementsByClassName('draw')[0];
@@ -19,10 +20,11 @@ document.body.onmouseup = () => (mouseDown = false)
 
 // Create 16x16 grid of square divs
 function createGrid() {
-    for (let i = 0; i < 20; i++) {
-        for (let j = 0; j < 20; j++) {
+    for (let i = 0; i < gridSize; i++) {
+        for (let j = 0; j < gridSize; j++) {
             grid = document.createElement('div');
             grid.classList.add('grid');
+            grid.style.cssText = `width: ${600/gridSize}px; height: ${600/gridSize}px`;
             grid.addEventListener("mouseover", changeColor);
             grid.addEventListener("mousedown", changeColor);
             document.getElementById("container").appendChild(grid);
@@ -39,9 +41,10 @@ function changeMode(mode) {
 
 // paint grids
 function changeColor(e) {
+    let color = document.getElementById('colorpicker').value;
     if (e.type === 'mouseover' && !mouseDown) return
     if (drawingMode === 'draw') {
-        e.target.style.backgroundColor = 'black';
+        e.target.style.backgroundColor = color;
     } else if (drawingMode === 'erase') {
         e.target.style.backgroundColor = 'white';
     }
