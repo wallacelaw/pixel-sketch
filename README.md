@@ -1,2 +1,2 @@
 # pixel-sketch
-Browser sketching game created using HTML, CSS and JS.
+Browser sketching app created using HTML, CSS and JS.
