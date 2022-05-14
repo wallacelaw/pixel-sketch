@@ -61,11 +61,22 @@ function changeSize() {
 
 function resetGrid() {
     let gridCells = Array.from(document.getElementsByClassName('grid'));
-    gridCells.forEach(grid => {
-        grid.style.backgroundColor = 'white';
+    gridCells.forEach(element => {
+        element.style.backgroundColor = 'white';
     });
 }
 
+//button color toggle when clicked
+const toggleBtns = Array.from(document.getElementsByClassName('btn-toggle'));
+for (let i = 0; i < toggleBtns.length; i++) {
+    toggleBtns[i].addEventListener('click', toggleButton)
+
+}
+
+function toggleButton () {
+    toggleBtns.forEach(element => element.classList.remove('btn-on')); 
+    this.classList.toggle('btn-on'); 
+}
 
 //On page load
 gridSlider.value = gridSize;
