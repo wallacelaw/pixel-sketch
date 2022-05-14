@@ -10,57 +10,62 @@ h1 {
     font-size: 100px;
 }
 
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
 #container {
     width: fit-content;
-    margin: 0 auto;
+    box-shadow: rgb(0 0 0 / 30%) 0px 2px 6px;
+    white-space: nowrap;
 }
 
 #container div {
-    display:inline-block;
-    vertical-align:top;
+    display: inline-block;
+    vertical-align: top;
+
 }
 
 .grid {
     width: 25px;
-    height: 25px;   
+    height: 25px;
     background-color: white;
 }
 
 button {
-    position: relative;
-    width: 180px;
-    height: 60px;
-    margin: 20px;
-    line-height: 60px;
-    letter-spacing: 2px;
-    text-decoration: none;
-    text-transform: uppercase;
+    background-color: #ffffff;
+    border: none;
+    color: rgba(56, 55, 55, 0.911);
+    padding: 15px 50px;
     text-align: center;
-    color: var(--color-white);
-    trasnition: var(--speed-normal);
-    border: 1px solid var(--color-red);
-
-}
-    button:hover {
-      border: 1px solid transparent;
-      background: var(--color-red) url(https://i.postimg.cc/wBXGXbWN/pixel.png); // 360px x 1080px
-      transition-delay: 0.8s;
-      background-size: 180px;
-      animation: animate var(--speed-fast) steps(8) forwards;
-    }
-    button :last-of-type {
-      border: 1px solid var(--color-purple);
-      &:hover {
-        background: var(--color-purple) url(https://i.postimg.cc/FzBWFtKM/pixel2.png); // 360px x 1080px
-      }
-    }
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 12px;
+    border: 2px solid #5e5e5efb; 
+    transition-duration: 0.4s;
+    
   }
-  
-  @keyframes animate {
-    0% {
-      background-position-y: 0;
-    }
-    100% {
-      background-position-y: -480px;
-    }
+
+  button:hover {
+    background-color: rgb(77, 124, 165);
+    color:rgb(221, 221, 221);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  button:active {
+    background-color: #7675cf;
+    transform: scale(0.95);
   }
