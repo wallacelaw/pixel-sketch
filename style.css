@@ -1,0 +1,18 @@
+body {
+    background-color: black;
+}
+
+#container div {
+    display:inline-block;
+    vertical-align:top;
+}
+
+.grid {
+    width: 25px;
+    height: 25px;   
+    background-color: red;
+    border: 1px solid white
+}
+
+br {
+ }
