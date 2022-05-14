@@ -31,7 +31,6 @@ function createGrid() {
             grid.addEventListener("mousedown", changeColor);
             document.getElementById("container").appendChild(grid);
     }
-    // gridContainer.style.cssText = `gridTemplateColumns: repeat(${gridSize}, 1fr); gridTemplateRows: repeat(${gridSize}, 1fr)`;
     gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`
     gridContainer.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`
 }
