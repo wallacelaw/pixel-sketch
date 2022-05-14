@@ -1,8 +1,14 @@
+// Author: Wallace Law
+
+let drawingMode = 'draw';
+
 //initialise buttons
+const drawBtn = document.getElementById('draw');
 const eraserBtn = document.getElementById('eraser');
 const resetBtn = document.getElementById('reset');
-let grid = document.createElement('div');
 
+drawBtn.onclick = () => changeMode('draw');
+eraserBtn.onclick = () => changeMode('erase');
 resetBtn.onclick = () => resetGrid();
 
 // set initial mousedown state to allow hold and click drawing
@@ -26,12 +32,19 @@ function createGrid() {
     }
 }
 
+function changeMode(mode) {
+    drawingMode = `${mode}`; 
+    console.log(drawingMode);
+}
 
 // paint grids
 function changeColor(e) {
-    console.log(e.type);
     if (e.type === 'mouseover' && !mouseDown) return
-    e.target.style.backgroundColor = 'black';
+    if (drawingMode === 'draw') {
+        e.target.style.backgroundColor = 'black';
+    } else if (drawingMode === 'erase') {
+        e.target.style.backgroundColor = 'white';
+    }
 }
 
 
