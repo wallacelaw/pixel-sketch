@@ -3,14 +3,17 @@
 let drawingMode = 'draw';
 let gridSize = 16;
 
-//initialise buttons
+//initialise elements
 const drawBtn = document.getElementsByClassName('draw')[0];
 const eraserBtn = document.getElementsByClassName('eraser')[0];
 const resetBtn = document.getElementById('reset');
+const gridSlider = document.getElementById('gridsize');
+const sizeLabel = document.getElementById('sizelabel');
 
 drawBtn.onclick = () => changeMode('draw');
 eraserBtn.onclick = () => changeMode('erase');
 resetBtn.onclick = () => resetGrid();
+gridSlider.onchange = () => changeSize();
 
 // set initial mousedown state to allow hold and click drawing
 let mouseDown = false;
@@ -34,6 +37,7 @@ function createGrid() {
     }
 }
 
+// change drawing mode between draw and erase
 function changeMode(mode) {
     drawingMode = `${mode}`;
     console.log(drawingMode);
@@ -50,6 +54,12 @@ function changeColor(e) {
     }
 }
 
+function changeSize() {
+    gridSize = gridSlider.value;
+    sizeLabel.innerHTML= `${gridSize} x ${gridSize}`;
+    document.getElementById('container').innerHTML = '';
+    createGrid();
+}
 
 function resetGrid() {
     let gridCells = Array.from(document.getElementsByClassName('grid'));
@@ -58,6 +68,7 @@ function resetGrid() {
     });
 }
 
-//On page load
-createGrid();
 
+//On page load
+gridSlider.value = gridSize;
+changeSize();
