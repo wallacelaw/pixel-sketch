@@ -3,8 +3,8 @@
 let drawingMode = 'draw';
 
 //initialise buttons
-const drawBtn = document.getElementById('draw');
-const eraserBtn = document.getElementById('eraser');
+const drawBtn = document.getElementsByClassName('draw')[0];
+const eraserBtn = document.getElementsByClassName('eraser')[0];
 const resetBtn = document.getElementById('reset');
 
 drawBtn.onclick = () => changeMode('draw');
@@ -24,7 +24,7 @@ function createGrid() {
             grid = document.createElement('div');
             grid.classList.add('grid');
             grid.addEventListener("mouseover", changeColor);
-            grid.addEventListener("mousedown", () => mouseDown = true);
+            grid.addEventListener("mousedown", changeColor);
             document.getElementById("container").appendChild(grid);
         }
         let nextLine = document.createElement("br");
@@ -33,7 +33,7 @@ function createGrid() {
 }
 
 function changeMode(mode) {
-    drawingMode = `${mode}`; 
+    drawingMode = `${mode}`;
     console.log(drawingMode);
 }
 

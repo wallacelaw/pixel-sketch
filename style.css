@@ -1,12 +1,13 @@
 body {
     background-color: #000000cb;
     user-select: none;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1 {
     color: rgba(138, 166, 218, 0.836);
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+
     font-size: 100px;
 }
 
@@ -68,4 +69,20 @@ button {
   button:active {
     background-color: #7675cf;
     transform: scale(0.95);
+  }
+
+  .btn-toggle:focus {
+    background-color: rgb(77, 124, 165);
+  }
+
+  footer {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+  }
+
+  .footnote {
+      color: white;
   }
